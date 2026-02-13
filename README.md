@@ -5,10 +5,10 @@
 A **Social Scientist turned Data Scientist, AI Engineer, and Cloud Specialist** with a unique blend of academic rigor and practical industry experience. I bridge the gap between human behavior and data-driven solutions, combining insights from social science with cutting-edge technology.
 
 - 🎓 **Background**: Social Sciences with deep interests in organizational behavior, human-computer interaction, and data ethics
-- - 🔬 **Expertise**: Data Science, Machine Learning, AI Development, Cloud Infrastructure
-  - - 🌍 **Based in**: Paris, France
-    - - 💼 **Current Focus**: Building scalable data solutions and cloud-native applications
-      - - 🚀 **Philosophy**: "Keep up with the world while maintaining curiosity and continuous learning"
+- 🔬 **Expertise**: Data Science, Machine Learning, AI Development, Cloud Infrastructure
+- 🌍 **Based in**: Paris, France
+- 💼 **Current Focus**: Building scalable data solutions and cloud-native applications
+- 🚀 **Philosophy**: "Keep up with the world while maintaining curiosity and continuous learning"
        
         - ---
 
