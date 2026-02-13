@@ -52,12 +52,6 @@ A **Social Scientist turned Data Scientist, AI Engineer, and Cloud Specialist** 
         A React WebApp presentation of VaxEvidence components, crafted to impress cofounders and investors with clean, professional React component design.
 
         **Tech**: React, TypeScript, UI/UX
-
-        ### [Ko-Saw-Portfolio](https://github.com/soneeee22000/Ko-Saw-Portfolio)
-        My brother Saw Yan Nain's professional portfolio, built with React and Nextjs. Demonstrates modern web development practices.
-
-        **Tech**: React, Next.js, TypeScript
-
         ---
 
         ## 🌟 What I'm Doing
