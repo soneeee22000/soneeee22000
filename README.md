@@ -22,12 +22,18 @@ A **Social Scientist turned Data Scientist, AI Engineer, and Cloud Specialist** 
         ![HTML/CSS](https://img.shields.io/badge/HTML%2FCSS-e34c26?style=flat-square&logo=html5&logoColor=white)
 
       ### Data & AI
+
+  
         ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
+
+  
         ![Data Science](https://img.shields.io/badge/Data%20Science-informational?style=flat-square)
         ![SQL](https://img.shields.io/badge/SQL-336791?style=flat-square&logo=postgresql&logoColor=white)
         ![Jupyter](https://img.shields.io/badge/Jupyter-F37726?style=flat-square&logo=jupyter&logoColor=white)
 
       ### Cloud & DevOps
+
+  
         ![AWS](https://img.shields.io/badge/AWS-232f3e?style=flat-square&logo=amazon-aws&logoColor=white)
         ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-4285f4?style=flat-square&logo=google-cloud&logoColor=white)
         ![Docker](https://img.shields.io/badge/Docker-2496ed?style=flat-square&logo=docker&logoColor=white)
