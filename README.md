@@ -35,25 +35,6 @@ A **Social Scientist turned Data Scientist, AI Engineer, and Cloud Specialist** 
         ![Cloud Computing](https://img.shields.io/badge/Cloud%20Computing-informational?style=flat-square)
 
         ---
-
-        ## 🎯 Featured Projects
-
-        ### [Deep Tech Smart City Mobility Interview Coding Project](https://github.com/soneeee22000/Deep_Tech_Smart_City_Mobility_Interview_Coding_Project_Exam)
-        A comprehensive data science project showcasing analysis and ML solutions for a hypothetical "Deep Tech Smart City Mobility Start-Up Company." Demonstrates real-world problem-solving skills using Python and data science techniques.
-
-        **Tech**: Python, Jupyter Notebook, Data Analysis
-
-        ### [siloet_mvp_tech_stack](https://github.com/soneeee22000/siloet_mvp_tech_stack)
-        MVP tech stack presentation for the first prototype, written with ReactApp. Showcases my approach to building and presenting technical solutions.
-
-        **Tech**: React, TypeScript, Web Development
-
-        ### [VaxEvidence-Pitch-Deck](https://github.com/soneeee22000/VaxEvidence-Pitch-Deck)
-        A React WebApp presentation of VaxEvidence components, crafted to impress cofounders and investors with clean, professional React component design.
-
-        **Tech**: React, TypeScript, UI/UX
-        ---
-
         ## 🌟 What I'm Doing
 
         - 🔭 Currently working on various projects combining data science and cloud technologies
