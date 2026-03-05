@@ -1,4 +1,4 @@
-# 👋 Hi, I'm Pyae Sone Kyaw
+# 👋 Hi, I'm Pyae Sone Kyaw ! You can call me "Seon" <3
 
 ## About
 
