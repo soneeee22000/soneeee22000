@@ -6,7 +6,7 @@ Social Scientist turned Data Scientist, Full-Stack AI Engineer & Cloud Specialis
 
 I bridge human behavior and data-driven solutions, combining social science insights with cutting-edge tech. My interests span HealthTech, RegTech, Edutech , LLMs Safety and Compliance Technologies.
 
-📧 [pyaesonekyaw1022000@gmail.com](mailto:pyaesonekyaw1022000@gmail.com) · 🌐 [Portfolio](https://soneeee22000.github.io/) · 💼 [LinkedIn](https://www.linkedin.com/in/pyae-sone-kyaw-80386721b)
+📧 [pyaesonekyaw1022000@gmail.com](mailto:pyaesonekyaw1022000@gmail.com) · 🌐 [Portfolio](https://pseonkyaw.dev/) · 💼 [LinkedIn](https://www.linkedin.com/in/pyae-sone-kyaw-80386721b)
 
 ---
 
