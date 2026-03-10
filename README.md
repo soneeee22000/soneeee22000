@@ -88,3 +88,7 @@ Particle canvas, 3D tilt cards, glitch text, SVG orbitals, and scroll reveal ani
 ---
 
 _Building at the frontier of AI and health tech. Always open to collaboration — reach out if you're working on something interesting._
+
+## Recent Activity
+
+Check out my [repositories](https://github.com/soneeee22000?tab=repositories) to see what I'm building.
