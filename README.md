@@ -21,37 +21,41 @@ I design and ship end-to-end AI-powered platforms — from database schema to de
 ## Featured Projects
 
 ### [VaxEvidence](https://github.com/soneeee22000/VaxEvidence-Dev) — Real-World Evidence Platform
-
 Production-grade platform for vaccine researchers featuring PICO protocol builder, PRISMA screening pipeline, RoB 2/ROBINS-I assessment, meta-analysis forest plots, real-time CRDT collaboration, and FDA/EMA/CDISC regulatory exports.
 
 `Next.js 16` `React 19` `TypeScript` `Supabase` — 76 API routes · 27 DB tables · 1,400+ tests
 
-### [HeatDebt](https://github.com/soneeee22000/HeatDebt.dev) — Urban Thermal Equity Platform
+### SpeakProof — AI IELTS Speaking Coach *(private)*
+AI-powered IELTS Speaking practice with real-time voice examiner, calibrated band scoring, and native-language coaching. Dual-market product targeting France and Myanmar.
 
-Real-time heat vulnerability monitoring across 14 census tracts. Interactive choropleth maps, live weather integration, AI-powered risk analysis, and dual-format reports for city planners.
+`Python` `TypeScript` `Next.js` `FastAPI` — Real-time voice AI · Calibrated scoring engine · Bilingual coaching
 
-`Next.js 14` `TypeScript` `Leaflet` `Gemini AI`
+### Sentinel AI — EU AI Act Compliance Autopilot *(private)*
+Multi-agent LangGraph system for automated EU AI Act compliance: risk classification, gap analysis, and remediation workflows across the full regulatory lifecycle.
 
-### [SafeGen](https://github.com/soneeee22000/SafeGen.dev) — Responsible AI Compliance Middleware
+`Python` `LangGraph` `FastAPI` — Multi-agent pipeline · Risk classification · Gap analysis
 
-Serverless pipeline with PII detection, bias checking, safety filtering, RAG-powered policy rules, real-time dashboard, and full audit trail.
+### [ComplyOS](https://github.com/soneeee22000/ComplyOS) — EU AI Act Compliance Agent
+AI-powered compliance agent to classify AI systems by risk level, identify compliance gaps, and auto-generate required regulatory documentation.
 
-`Azure Functions` `GPT-4o` `Python`
+`Next.js` `FastAPI` `Python` `RAG` — Risk classification · Doc generation · Compliance reporting
 
-### [GreenLens](https://github.com/soneeee22000/GreenLens.dev) — Cloud Carbon Footprint Estimator
+### SkillFlow — Predictive Workforce Redeployment Engine *(private)*
+7-agent AI system for predictive redeployment of temporary workers with verifiable skill credentials. Built for ManpowerGroup at VivaTech 2026.
 
-AI-powered CO2e estimates with per-resource breakdowns and reduction recommendations.
+`TypeScript` `AI Agents` — 7-agent architecture · Verifiable credentials · VivaTech 2026
 
-`ASP.NET Core 8` `Angular 17` `Azure AI Search` `Azure OpenAI`
+### [Galac6 Parent](https://github.com/soneeee22000/galac6-parent) — AI EdTech Mobile Companion
+Parent companion app for Galac6 — French AI EdTech platform. Activity tracking, AI weekly reports powered by Claude API, screen time controls, and multi-child profile management.
 
-### [DocuQuery](https://github.com/soneeee22000/DocuQuery-dev) — Resume-JD Match Analyzer
+`React Native` `Expo SDK 54` `TypeScript` — Claude API · AI reports · Mobile-first · MIT License
 
-Upload a resume and job description to get match scores, keyword gap analysis, section-by-section feedback, and actionable tips.
+### [TraceGraph](https://github.com/soneeee22000/tracegraph) — GraphRAG Citation Explorer
+Interactive knowledge graph visualization with citation-grounded AI. Explore research connections and trace evidence chains through a full-stack GraphRAG pipeline.
 
-`Next.js` `FastAPI` `GPT-4o-mini`
+`Next.js` `Python` `TypeScript` `Docker` — GraphRAG · Knowledge graph · Citation AI · MIT License
 
 ### [Seon.dev](https://github.com/soneeee22000/Seon.dev) — Personal Portfolio
-
 Particle canvas, 3D tilt cards, glitch text, SVG orbitals, and scroll reveal animations. Statically generated and deployed on Vercel.
 
 `Next.js 15` `React 19` `TypeScript` `Tailwind CSS 4`
@@ -61,7 +65,6 @@ Particle canvas, 3D tilt cards, glitch text, SVG orbitals, and scroll reveal ani
 ## Languages & Tools
 
 ### Languages
-
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
@@ -71,7 +74,6 @@ Particle canvas, 3D tilt cards, glitch text, SVG orbitals, and scroll reveal ani
 ![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)
 
 ### Frameworks & Libraries
-
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
@@ -82,7 +84,6 @@ Particle canvas, 3D tilt cards, glitch text, SVG orbitals, and scroll reveal ani
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 
 ### AI & Data Science
-
 ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
 ![Anthropic](https://img.shields.io/badge/Anthropic-191919?style=for-the-badge&logo=anthropic&logoColor=white)
@@ -95,7 +96,6 @@ Particle canvas, 3D tilt cards, glitch text, SVG orbitals, and scroll reveal ani
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 
 ### Cloud & DevOps
-
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
 ![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
@@ -107,7 +107,6 @@ Particle canvas, 3D tilt cards, glitch text, SVG orbitals, and scroll reveal ani
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 
 ### Tools & Platforms
-
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
@@ -123,14 +122,15 @@ Particle canvas, 3D tilt cards, glitch text, SVG orbitals, and scroll reveal ani
 ## GitHub Stats
 
 <p>
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=soneeee22000&show_icons=true&theme=default&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub Stats" height="165" />
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=soneeee22000&layout=compact&theme=default&hide_border=true&langs_count=8" alt="Top Languages" height="165" />
-</p>
-
+    <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=soneeee22000&show_icons=true&theme=default&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub Stats" height="165" />
+    <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=soneeee22000&layout=compact&theme=default&hide_border=true&langs_count=8" alt="Top Languages" height="165" />
+</p>p>
 <p>
-  <img src="https://streak-stats.demolab.com/?user=soneeee22000&theme=default&hide_border=true" alt="GitHub Streak" />
-</p>
+    <img src="https://streak-stats.demolab.com/?user=soneeee22000&theme=default&hide_border=true" alt="GitHub Streak" />
+</p>p>
 
 ---
 
 _Building at the frontier of AI and health tech. Always open to collaboration — reach out if you're working on something interesting._
+</p>
+</p>
