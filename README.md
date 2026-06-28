@@ -4,7 +4,7 @@
 
 ### AI Specialist · Data Scientist · Full-Stack AI Engineer & Architect
 
-**Founder & AI Engineer @ [Ekkhara](https://www.ekkhara.com)** — an AI Ventures Studio · Moving Myanmar Forward One Step At A Time.
+**Founder & AI Engineer @ [Ekkhara](https://www.ekkhara.com)** — an AI Ventures Studio · Moving Myanmar Forward One Product At A Time.
 
 _I take products from an empty repo to live in production — owning architecture, backend, AI, and front-end end-to-end._
 
