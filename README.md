@@ -53,7 +53,7 @@ Traces, tool calls, tokens, cost, latency and errors — streamed live from a sw
 
 `TypeScript` · `Fastify` · `Vue 3` · `Kafka` · `GCP Pub/Sub` · `SSE` · `GraphQL` — **76 tests** · [▶ Live demo](https://agentpulse-web-171722935814.europe-west1.run.app)
 
-### 🇲🇲 [WikiHow-MY](https://github.com/soneeee22000/wikihow-mt-my) — English→Myanmar MT, Fine-Tune & Human Study
+### 📚 [WikiHow-MY](https://github.com/soneeee22000/wikihow-mt-my) — English→Myanmar MT, Fine-Tune & Human Study
 
 ~10K human post-edited pairs with article-disjoint splits, an **NLLB-200 600M fine-tune** ([weights on HF](https://huggingface.co/PyaeSoneK/nllb-600m-wikihow-en-my)), a 4-system benchmark (chrF++, spBLEU, COMET, MetricX-24), and a 9-rater human study — which showed my own proposed metric **fails** (r = 0.084). The negative result is reported.
 
