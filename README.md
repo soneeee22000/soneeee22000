@@ -2,7 +2,7 @@
 
 # Pyae Sone Kyaw · `Seon`
 
-### Evaluation-Driven AI Engineer · Agent Graphs · Evals · Full-Stack
+### AI Engineer · Agent Graphs · Evals · Full-Stack
 
 **I build agent workflows as explicit graphs — then define how they're checked, trace every step, and observe the results.**
 
