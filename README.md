@@ -97,7 +97,7 @@ At Hoora, I owned the evaluation and quality-gating layer end to end, and worked
 
 ### Stack
 
-**Languages:** Python · TypeScript · Java · SQL
-**AI:** Anthropic / Claude · Mastra · LangGraph · Hugging Face · PyTorch
-**Back end:** FastAPI · Fastify · Spring Boot · Kafka · PostgreSQL
-**Cloud:** GCP Cloud Run · Azure · AWS · Docker · GitHub Actions
+- **Languages:** Python · TypeScript · Java · SQL
+- **AI:** Anthropic / Claude · Mastra · LangGraph · Hugging Face · PyTorch
+- **Back end:** FastAPI · Fastify · Spring Boot · Kafka · PostgreSQL
+- **Cloud:** GCP Cloud Run · Azure · AWS · Docker · GitHub Actions
