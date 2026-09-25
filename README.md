@@ -1,183 +1,103 @@
-<div align="center">
+# Pyae Sone Kyaw · Seon
 
-# Pyae Sone Kyaw · `Seon`
+**Evaluation-driven AI engineer.** I build agent workflows as explicit graphs, then define how they are checked, trace every step and observe the results.
 
-### AI Specialist · Data Scientist · Full-Stack AI Engineer & Architect
+Engineering since 2021, AI/ML since 2023. Paris.
 
-**Founder & AI Engineer @ [Ekkhara](https://www.ekkhara.com)** — an AI Ventures Studio · Moving Myanmar Forward One Product At A Time.
-
-_I take products from an empty repo to live in production — owning architecture, backend, AI, and front-end end-to-end._
-
-[![Portfolio](https://img.shields.io/badge/Portfolio-pseonkyaw.dev-C9A96E?style=for-the-badge&logo=vercel&logoColor=white)](https://pseonkyaw.dev/)
-[![Ekkhara](https://img.shields.io/badge/Studio-ekkhara.com-CC7B7B?style=for-the-badge&logo=rocket&logoColor=white)](https://www.ekkhara.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Pyae_Sone_Kyaw-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pyae-sone-kyaw-80386721b)
-[![Kaggle](https://img.shields.io/badge/Kaggle-pyaesonekyaw-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/pyaesonekyaw)
-[![Email](https://img.shields.io/badge/Email-Get_in_touch-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:pyaesonekyaw1022000@gmail.com)
-
-</div>
+[Portfolio hub](https://pseonkyaw-hub.vercel.app) · [pseonkyaw.dev](https://pseonkyaw.dev) · [LinkedIn](https://www.linkedin.com/in/pyae-sone-kyaw) · [Hugging Face](https://huggingface.co/PyaeSoneK) · [Email](mailto:pyaesonekyaw101010@gmail.com)
 
 ---
 
-## 👋 Who I Am
+### How I work: Define → Build → Trace → Observe
 
-I'm a **Full-Stack AI Engineer who ships products to real users, not demos.** Five-plus years across AI, data, and software engineering — from NLP research labs in Bangkok and Paris to zero-to-one startups at Station F, to founding my own studio.
+1. **Define:** the contract, schema or dataset the system is checked against
+2. **Build:** the system itself
+3. **Trace:** per-step records a person can follow afterwards
+4. **Observe:** measurement (evals, benchmarks, human studies, live metrics)
 
-Today I'm building **Ekkhara**, a self-funded AI ventures studio, while engineering production systems at the intersection of **health tech, regulatory compliance, real-world evidence, and telecom data infrastructure.**
-
-- 🏗️ **I architect first, then build.** Clean / Hexagonal architecture, API-first design, real tests, CI that stays green.
-- 🤖 **My specialty:** RAG systems, production AI agents with observability & failure detection baked in, cloud data pipelines, and LLM fine-tuning.
-- 🎓 **Dual Master's in Data Science** — Télécom SudParis (Institut Polytechnique de Paris) 🇫🇷 & Asian Institute of Technology 🇹🇭.
-- 🌏 Yangon → Bangkok → Paris. Social scientist turned engineer — communication and cross-cultural instincts are part of the toolkit.
+Every project below pairs what was built with how it is evaluated, and says where the evaluation stops.
 
 ---
 
-## 🚀 What I'm Building Now — Ekkhara Ventures
+### Featured
 
-> Real products, real users, real moats. Each one shipped end-to-end.
+#### [Faultline NOC](https://github.com/soneeee22000/faultline-noc): a router over three specialist agents, scored before it can touch a network
 
-### 🗣️ [SpeakProof](https://t.me/SpeakProofTOEFLBot) — TOEFL Speaking Coach, live inside Telegram
+- **Built:** a typed `RoutePlan` contract (ordered steps, per-step context, which step may write and whether it needs confirmation). The routers are a keyword baseline and two Claude models answering through a forced tool call, from a prompt frozen by SHA-256. They sit on a seeded, simulated 5G SA core.
+- **Evaluated by:** 4 deterministic detectors (misroute, missing handoff, unsafe write, missed clarification) plus set-level metrics. The harness is itself tested: 4 mutant routers each carry one planted defect and must trip their own detector. CI replays every recorded model call with no API key.
+- **Numbers:** Claude Haiku 4.5 and Sonnet 5 each got 45/52 exact routes; the keyword baseline got 40/52. The intervals overlap, so this is a comparison, not a quality claim.
+- **Limits:** the 52 items were written by me, with one recorded answer per model per item.
 
-The one that's **genuinely shipping to real Myanmar learners.** A TOEFL speaking & English-practice bot that runs entirely inside Telegram — so learners can train for the computer-based TOEFL despite the country's internet restrictions, **no VPN needed.** I built the full stack: Python/FastAPI services, LLM-driven speaking feedback & calibrated scoring, and the conversational UX.
+[Design note](https://faultline-noc.vercel.app/#router) · [Project page](https://faultline-noc.vercel.app) · [Repo](https://github.com/soneeee22000/faultline-noc)
+`Python` `pydantic` `mypy --strict` `pytest` `Anthropic tool use`
 
-`Python` · `FastAPI` · `LLM` · `Telegram Bot API` — **▶ Live → [@SpeakProofTOEFLBot](https://t.me/SpeakProofTOEFLBot)**
+#### [Agentic game generator](https://github.com/soneeee22000/cartridge): an explicit workflow graph with a two-tier evaluator
 
-### 🩺 [VitaLens](https://github.com/soneeee22000/vitalens) — AI Blood-Test Interpretation
+- **Built:** a Mastra workflow with typed Zod step I/O. It plans, then runs generate → verify in a loop, then finalizes or rejects. The repair loop is capped at 3, and each failure is attributed to the step that produced it.
+- **Evaluated by:**
+  - E1: 24 deterministic contract rules
+  - E2: a Playwright runtime probe with 6 detectors
+  - E3: a cited judge, where each finding must quote a real line
+  - E4: a language-match check
+- **Numbers:** 20 of 20 authored prompts produced a game. 9 of the 20 games passed every static rule and still failed at runtime (E2 passed 11 of 20), so passing static checks does not make a game work.
+- **Limits:** one generation per item, and I wrote the prompts.
 
-Built & live on **GCP Cloud Run.** Mistral OCR over French lab reports + **deterministic LOINC biomarker classification** + **FHIR R5 audit trail** for personalized supplement guidance. The moat is the data + validation pipeline, not the LLM.
+[Live demo (replayed model calls)](https://cartridge-engine.vercel.app) · [Repo](https://github.com/soneeee22000/cartridge)
+`TypeScript` `Mastra` `Zod` `AI SDK` `Playwright` `Vitest`
 
-`Python` · `Next.js` · `FastAPI` · `PostgreSQL` · `Mistral OCR` · `FHIR R5` — **73 tests · 86% coverage · Haleon @ VivaTech 2026**
+#### [AgentPulse](https://github.com/soneeee22000/agentpulse): real-time observability for agent runs
 
-### 🌱 [VitalAge](https://github.com/soneeee22000/vitalage) — Smart-Aging Daily Vitality Companion
+- **Built:** one Zod event contract with 7 event types, checked at ingest and in the browser. An event bus with memory, Pub/Sub and Kafka drivers. A 60 s rolling aggregator (p50/p95, error rate, cost). SSE and GraphQL subscriptions feeding a span waterfall.
+- **Evaluated by:** 76 Vitest tests across contracts, percentiles, window eviction, projection and the bus drivers. It is a dashboard, so there is no benchmark.
+- **Limits:** the demo traffic is simulated, not produced by real agents, and state is held in memory only.
 
-Built & live on **GCP Cloud Run.** A 60-second daily check-in habit loop with **Mistral-Vision meal analysis** and a **longitudinal Vitality Score** that compounds over 30 days. Retention is the moat.
+[Live demo](https://agentpulse-web-171722935814.europe-west1.run.app) · [Repo](https://github.com/soneeee22000/agentpulse)
+`TypeScript` `Fastify` `Vue 3` `Kafka` `Pub/Sub` `Cloud Run`
 
-`Python` · `Mistral Vision` · `GCP Cloud Run` — **64 tests · Nestlé @ VivaTech 2026**
+#### [WikiHow-MY](https://github.com/soneeee22000/wikihow-mt-my): English→Myanmar MT, a fine-tune, and a metric that fails
 
----
+- **Built:** about 10K post-edited pairs with article-disjoint splits (asserted in code), and an NLLB-200 600M fine-tune.
+- **Evaluated by:** a 4-system benchmark (chrF++, spBLEU, COMET, MetricX-24) with a FLORES+ control, plus a human study: 9 raters gave 420 followability ratings.
+- **Numbers:** the fine-tune gains +5.63 chrF++ in domain and +4.33 chrF++ on FLORES+.
+- **The metric fails:** my own IFS metric correlates with human followability at r = 0.084, and I report that negative result.
 
-## 🏗️ Featured Engineering
+[Repo](https://github.com/soneeee22000/wikihow-mt-my) · [HF weights](https://huggingface.co/PyaeSoneK/nllb-600m-wikihow-en-my)
+`Python` `Transformers` `NLLB-200` `COMET` `MetricX-24`
 
-### [VaxEvidence](https://vaxevidence-dev.vercel.app/) — Real-World Evidence Platform
+#### Also built
 
-Production-grade platform for vaccine researchers: PICO protocol builder, PRISMA screening pipeline, RoB 2 / ROBINS-I assessment, meta-analysis forest plots, real-time CRDT collaboration, and FDA / EMA / CDISC regulatory exports.
+- [AgentProbe](https://github.com/soneeee22000/AgentProbe): a ReAct agent written from scratch, with a deterministic failure taxonomy and a multi-model benchmark.
+- [Knowledge-Graph RAG Explorer](https://github.com/soneeee22000/Knowledge-Graph-RAG-Explorer): GraphRAG stages on a canvas, with a retrieval eval comparing vector-only and graph-expanded search. [Demo (mock mode)](https://knowledge-graph-rag-explorer.vercel.app)
+- [AgentCanvas](https://github.com/soneeee22000/agentcanvas): a Vue Flow studio for composing agent workflows, with step-level run visibility. [Demo (mock mode)](https://agentcanvas-demo.vercel.app)
+- [VaxEvidence](https://github.com/soneeee22000/VaxEvidence-Dev): a real-world-evidence platform for vaccine research (PICO, PRISMA, RoB 2, meta-analysis, regulatory exports). [Live demo](https://vaxevidence-dev.vercel.app/demo)
+- [EV charging copilot](https://github.com/soneeee22000/electra-charging-copilot): a tool-grounded RAG assistant; every station, price and route comes from a tool call, never from the model.
+- [FaceProof](https://github.com/soneeee22000/faceproof): face verification and liveness detection, measured on the LFW protocol.
+- SpeakProof: a TOEFL speaking-practice bot inside Telegram, used by learners in Myanmar.
 
-`Next.js 16` · `React 19` · `TypeScript` · `Supabase` — **76 API routes · 27 DB tables · 1,400+ tests** · [▶ Live](https://vaxevidence-dev.vercel.app/)
-
-### [GridFlex](https://github.com/soneeee22000/gridflex) — Real-Time European Grid Lakehouse
-
-Probabilistic forecasting and **stochastic optimisation for battery-flexibility decisions** on a real-time AWS lakehouse. Streaming ingestion → feature store → ML serving, fully orchestrated.
-
-`AWS` · `Apache Iceberg` · `Kafka` · `dbt` · `Airflow` · `MLflow`
-
-### [CDR Pipeline](https://github.com/soneeee22000/cdr-pipeline) — Telecom Billing Backbone
-
-Event-driven **Call Detail Record** ingestion, rating, and reconciliation pipeline — the kind of system that bills real mobile traffic. Idempotent, replayable, observable.
-
-`Java 21` · `Spring Boot 3.5` · `Kafka` · `MySQL` · `MongoDB` · `Docker`
-
-### [AgentProbe](https://github.com/soneeee22000/AgentProbe) — AI Agent Failure Taxonomy & Eval Harness
-
-A ReAct agent built **observability-first** — a failure taxonomy and evaluation harness that catches where agents break, with live SSE streaming of reasoning traces. This is how I think production agents should be built.
-
-`Python` · `FastAPI` · `Next.js 16` · `PostgreSQL` · `ReAct` · `Groq` · `SSE`
-
-### [CSRD Lake](https://github.com/soneeee22000/csrd-lake) — ESG / CSRD Data Pipeline
-
-End-to-end **CSRD / ESRS** sustainability-reporting reference implementation — Snowflake in the cloud, DuckDB locally, dbt transformations, Airflow orchestration, LLM-assisted disclosure mapping.
-
-`Snowflake` · `DuckDB` · `dbt` · `Airflow` · `Claude` · `Mistral`
-
-### [wikiHow-MT-MY](https://github.com/soneeee22000/wikihow-mt-my) — English↔Myanmar MT Research
-
-Human post-edited English→Myanmar instructional MT corpus, an **NLLB-200 fine-tune benchmark**, and a novel **Instruction Faithfulness Score** for evaluating low-resource translation.
-
-`Python` · `NLLB-200` · `HuggingFace` · `PyTorch`
-
-> More on [pseonkyaw.dev](https://pseonkyaw.dev/) — Diameter Credit-Control (Gy/RFC 4006), SMPP Gateway, Mobility Pulse (TimescaleDB + PostGIS + H3), BCBS 239 Lakehouse, and more.
+Data and back-end range: [GridFlex](https://github.com/soneeee22000/gridflex) (AWS grid lakehouse), [CSRD Lake](https://github.com/soneeee22000/csrd-lake) (Snowflake + dbt), [CDR pipeline](https://github.com/soneeee22000/cdr-pipeline) and [Diameter credit-control](https://github.com/soneeee22000/diameter-cc) (Java 21, Spring Boot 3.5, Kafka).
 
 ---
 
-## 🛠️ Languages & Tools
+### Experience
 
-### Languages
+| When                | Role                                                        | Where                  |
+| ------------------- | ----------------------------------------------------------- | ---------------------- |
+| May 2026 – Sep 2026 | Freelance AI Engineer, Hoora Games (SAS EASYWIN)            | Metz, France (remote)  |
+| Jun 2025 – May 2026 | Full-Stack AI Engineer, Siloett.AI                          | Station F, Paris       |
+| Jul 2024 – Dec 2025 | Data Science / Cloud Data Engineer, Floware                 | Station F, Paris       |
+| Jan 2023 – Jul 2024 | Research & Back-End Engineer, AIT BrainLab → DiCE Lab       | Bangkok → Paris        |
+| Jan 2021 – Dec 2022 | Software Engineer (Web), FAO (UN Food and Agriculture Org.) | Yangon (remote/hybrid) |
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
+At Hoora, I owned the evaluation and quality-gating layer end to end, and worked across the Mastra agent graph, its tool contracts and multilingual behaviour. The agentic game generator above is my independent design of the full pipeline.
 
-### AI & ML
+### Education
 
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
-![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
-![Anthropic](https://img.shields.io/badge/Claude-191919?style=for-the-badge&logo=anthropic&logoColor=white)
-![Mistral AI](https://img.shields.io/badge/Mistral_AI-FA520F?style=for-the-badge&logo=mistralai&logoColor=white)
-![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+- **MSc Data Science and Network Intelligence**, Télécom SudParis (Institut Polytechnique de Paris)
+- **MSc Data Science and AI**, Asian Institute of Technology
 
-### Backend & Frameworks
+### Stack
 
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-
-### Data Engineering
-
-![Kafka](https://img.shields.io/badge/Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white)
-![Spark](https://img.shields.io/badge/Spark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
-![Airflow](https://img.shields.io/badge/Airflow-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white)
-![dbt](https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white)
-![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white)
-![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)
-
-### Cloud & DevOps
-
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white)
-![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=icloud&logoColor=white)
-![GCP](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
-
-### Databases
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
-![Neo4j](https://img.shields.io/badge/Neo4j-4581C3?style=for-the-badge&logo=neo4j&logoColor=white)
-
----
-
-## 📊 GitHub Stats
-
-<div align="center">
-
-<img src="https://github-readme-stats-sigma-five.vercel.app/api?username=soneeee22000&show_icons=true&theme=default&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub Stats" height="165" />
-<img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=soneeee22000&layout=compact&theme=default&hide_border=true&langs_count=8" alt="Top Languages" height="165" />
-
-<img src="https://streak-stats.demolab.com/?user=soneeee22000&theme=default&hide_border=true" alt="GitHub Streak" />
-
-</div>
-
----
-
-<div align="center">
-
-**Building at the frontier of AI, data, and product — from Station F to the rest of the world.**
-
-Open to mid-to-senior roles & collaboration — AI Engineer · ML Engineer · Data Scientist · Data Engineer.
-
-📫 Always happy to talk AI, data, or building something ambitious.
-
-[**pseonkyaw.dev**](https://pseonkyaw.dev/) · [**ekkhara.com**](https://www.ekkhara.com) · [**LinkedIn**](https://www.linkedin.com/in/pyae-sone-kyaw-80386721b) · [**Kaggle**](https://www.kaggle.com/pyaesonekyaw)
-
-</div>
+**Languages:** Python · TypeScript · Java · SQL
+**AI:** Anthropic / Claude · Mastra · LangGraph · Hugging Face · PyTorch
+**Back end:** FastAPI · Fastify · Spring Boot · Kafka · PostgreSQL
+**Cloud:** GCP Cloud Run · Azure · AWS · Docker · GitHub Actions
